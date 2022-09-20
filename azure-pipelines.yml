@@ -45,5 +45,5 @@ steps:
 - task: AppCenterTest@1
   displayName: 'Publish apk in appCenter'
   inputs:
-    appFile: 'apk'
-    artifactsDirectory: '$(build.artifactstagingdirectory)/build'
+    appFile: 'app-debug.apk'
+    artifactsDirectory: '$(build.artifactstagingdirectory)/apk'
