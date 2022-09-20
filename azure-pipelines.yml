@@ -27,13 +27,11 @@ steps:
     tasks: 'assembleDebug'
 
 - task: CopyFiles@2
-  displayName: 'Copy build files to staging'
   inputs:
-    SourceFolder: '$(build.sourcesdirectory)/app/build/outputs'
-    Contents: 'apk/**/*.debug.apk'
-    TargetFolder: '$(build.artifactstagingdirectory)/build'
-    OverWrite: true
-    flattenFolders: true
+    SourceFolder: $(Build.SourcesDirectory)
+    contents: '**/*.debug.apk'
+    targetFolder: '$(build.artifactStagingDirectory)'
+    overWrite: true
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish pipeline artifact'
