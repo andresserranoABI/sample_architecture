@@ -40,10 +40,10 @@ steps:
   inputs:
     pathtoPublish: '$(build.artifactstagingdirectory)/build'
     artifactName: 'apk'
-    targetPath: '$(Build.ArtifactStagingDirectory)'
+    artifactType: 'container'
 
 - task: AppCenterTest@1
   displayName: 'Publish apk in appCenter'
   inputs:
     appFile: 'app-debug.apk'
-    artifactsDirectory: '$(build.artifactstagingdirectory)/build/apk'
+    artifactsDirectory: '$(build.artifactstagingdirectory)/build'
