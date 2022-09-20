@@ -36,8 +36,18 @@ steps:
     flattenFolders: true
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish pipeline artifact'
+  displayName: 'upload apk into artifact directory'
   inputs:
     pathtoPublish: '$(build.artifactstagingdirectory)/build'
     artifactName: 'apk'
     targetPath: '$(Build.ArtifactStagingDirectory)'
+
+- task: AppCenterTest@1
+  displayName: 'Publish apk in appCenter'
+  inputs:
+    appFile: 'apk/**/*.apk'
+    artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
+    frameworkOption: 'appium'
+    appiumBuildDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
+    credentialsOption: 'serviceEndpoint'
+    localeOption: 'en_US'
