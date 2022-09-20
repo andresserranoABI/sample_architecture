@@ -46,4 +46,4 @@ steps:
   displayName: 'Publish apk in appCenter'
   inputs:
     appFile: 'app-debug.apk'
-    artifactsDirectory: '$(build.artifactstagingdirectory)/apk'
+    artifactsDirectory: '$(build.artifactstagingdirectory)/build'
