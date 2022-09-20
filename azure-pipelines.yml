@@ -45,8 +45,8 @@ steps:
 - task: AppCenterTest@1
   displayName: 'Publish apk in appCenter'
   inputs:
-    appFile: 'apk/**/*.apk'
-    artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
+    appFile: 'app-debug.apk'
+    artifactsDirectory: '$(Build.ArtifactStagingDirectory)/build/apk'
     frameworkOption: 'appium'
     appiumBuildDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
     credentialsOption: 'serviceEndpoint'
