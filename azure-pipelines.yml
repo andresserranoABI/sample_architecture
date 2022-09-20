@@ -47,7 +47,3 @@ steps:
   inputs:
     appFile: 'app-debug.apk'
     artifactsDirectory: '$(Build.ArtifactStagingDirectory)/build/apk'
-    frameworkOption: 'appium'
-    appiumBuildDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
-    credentialsOption: 'serviceEndpoint'
-    localeOption: 'en_US'
