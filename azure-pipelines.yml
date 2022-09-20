@@ -17,6 +17,7 @@ steps:
         jdkArchitectureOption: 'x64'
         jdkSourceOption: 'PreInstalled'
 - task: Gradle@2
+  displayName: 'assemble build'
   inputs:
     workingDirectory: ''
     gradleWrapperFile: 'gradlew'
@@ -33,3 +34,9 @@ steps:
     TargetFolder: '$(build.artifactstagingdirectory)/build'
     OverWrite: true
     flattenFolders: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/debug/'
+    artifactName: 'apks'
+    publishLocation: 'container'
