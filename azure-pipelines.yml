@@ -35,8 +35,9 @@ steps:
     OverWrite: true
     flattenFolders: true
 
-- task: PublishPipelineArtifact@0
+- task: PublishBuildArtifacts@1
   displayName: 'Publish pipeline artifact'
   inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/debug/'
     artifactName: 'apk'
     targetPath: '$(Build.ArtifactStagingDirectory)'
