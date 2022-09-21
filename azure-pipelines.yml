@@ -54,4 +54,4 @@ steps:
   displayName: 'Distribute to App Center'
   inputs:
     appFile: '$(build.artifactstagingdirectory)/build/app-debug.apk'
-    appiumBuildDirectory: '$(build.artifactstagingdirectory)/build/appcenter-test'
+    prepareTests: false
