@@ -46,10 +46,12 @@ steps:
   inputs:
     script: |
       npm install -g appcenter-cli
+      mkdir appcenter-test
+      cd appcenter-test
     workingDirectory: '$(build.artifactstagingdirectory)/build'
 
 - task: AppCenterTest@1
   displayName: 'Distribute to App Center'
   inputs:
     appFile: '$(build.artifactstagingdirectory)/build/app-debug.apk'
-    appiumBuildDirectory: '$(build.artifactstagingdirectory)/build'
+    appiumBuildDirectory: '$(build.artifactstagingdirectory)/build/appcenter-test'
