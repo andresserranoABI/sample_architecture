@@ -42,6 +42,12 @@ steps:
     artifactName: 'apk'
     artifactType: 'container'
 
+- task: CmdLine@2
+  inputs:
+    script: |
+      npm install -g appcenter-cli
+    workingDirectory: '$(build.artifactstagingdirectory)/build'
+
 - task: AppCenterTest@1
   displayName: 'Distribute to App Center'
   inputs:
