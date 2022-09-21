@@ -16,6 +16,7 @@ steps:
         versionSpec: '11'
         jdkArchitectureOption: 'x64'
         jdkSourceOption: 'PreInstalled'
+
 - task: Gradle@2
   displayName: 'assemble build'
   inputs:
@@ -49,7 +50,7 @@ steps:
       mkdir appcenter-test
       cd appcenter-test
     workingDirectory: '$(build.artifactstagingdirectory)/build'
-- task: AppCenterDistribute@3
+
 - task: AppCenterDistribute@3
   inputs:
     serverEndpoint: 'VSAC'
