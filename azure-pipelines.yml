@@ -45,4 +45,4 @@ steps:
 - task: AppCenterTest@1
   displayName: 'Distribute to App Center'
   inputs:
-    appFile: '$(build.artifactstagingdirectory)/apk/app-debug.apk'
+    appFile: '$(build.artifactstagingdirectory)/build/app-debug.apk'
