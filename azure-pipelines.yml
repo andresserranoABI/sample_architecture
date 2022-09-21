@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'macOS-latest'
 
 steps:
 
@@ -54,4 +54,6 @@ steps:
   displayName: 'Distribute to App Center'
   inputs:
     appFile: '$(build.artifactstagingdirectory)/build/app-debug.apk'
-    prepareTests: false
+    prepareTests: true
+    frameworkOption: 'appium'
+    appiumBuildDirectory: '$(build.artifactstagingdirectory)/build'
