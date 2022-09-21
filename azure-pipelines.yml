@@ -50,6 +50,12 @@ steps:
       cd appcenter-test
     workingDirectory: '$(build.artifactstagingdirectory)/build'
 
+- task: AppCenterDistribute@3
+  inputs:
+    serverEndpoint: 'https://appcenter.ms'
+    appSlug: 'andresserrano/ABI-Wallet'
+    appFile: '$(build.artifactstagingdirectory)/build/app-debug.apk'
+    
 - task: AppCenterTest@1
   displayName: 'Distribute to App Center'
   inputs:
