@@ -55,11 +55,5 @@ steps:
     serverEndpoint: 'https://appcenter.ms'
     appSlug: 'andresserrano/ABI-Wallet'
     appFile: '$(build.artifactstagingdirectory)/build/app-debug.apk'
-    
-- task: AppCenterTest@1
-  displayName: 'Distribute to App Center'
-  inputs:
-    appFile: '$(build.artifactstagingdirectory)/build/app-debug.apk'
-    prepareTests: true
-    frameworkOption: 'appium'
-    appiumBuildDirectory: '$(build.artifactstagingdirectory)/build'
+    releaseNotesOption: 'input'
+    releaseNotesInput: 'Here are the release notes for this version.'
