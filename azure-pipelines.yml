@@ -49,11 +49,13 @@ steps:
       mkdir appcenter-test
       cd appcenter-test
     workingDirectory: '$(build.artifactstagingdirectory)/build'
-
 - task: AppCenterDistribute@3
   inputs:
-    serverEndpoint: 'https://appcenter.ms'
+    serverEndpoint: 'VSAC'
     appSlug: 'andresserrano/ABI-Wallet'
     appFile: '$(build.artifactstagingdirectory)/build/app-debug.apk'
+    buildVersion: '1'
+    symbolsOption: 'Android'
     releaseNotesOption: 'input'
     releaseNotesInput: 'Here are the release notes for this version.'
+    destinationType: 'groups'
